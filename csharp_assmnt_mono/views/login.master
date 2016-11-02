@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" Inherits="csharp_assmnt_mono.login" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+	<title>login</title>
+</head>
+<body>
+<div id="container">
+<form runat="server">
+    <asp:ContentPlaceHolder id="contentPlaceHolder" runat="server" /> 
+</form>
+</div>
+</body>
+</html>
+
