@@ -34,6 +34,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Data" />
+    <Reference Include="Mono.Data.Sqlite" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -57,11 +58,12 @@
     <Compile Include="views\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="models\Owner.cs" />
     <Compile Include="helpers\Database.cs" />
     <Compile Include="models\File.cs" />
     <Compile Include="models\Perm.cs" />
     <Compile Include="helpers\GlobalVariables.cs" />
+    <Compile Include="models\User.cs" />
+    <Compile Include="models\Model.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\" />

@@ -22,7 +22,8 @@ namespace csharp_assmnt_mono.views
 		protected void btnSubmit_Click(object sender, EventArgs e)
 		{
 			Database d = Database.Instance;
-			Owner loggedInUser = d.login(txtEmail.Text, txtPWD.Text);
+			User loggedInUser = models.User.login(txtEmail.Text, txtPWD.Text);
+
 			if (loggedInUser!=null)
 			{
 				GlobalVariables.loggedInUser = loggedInUser;
