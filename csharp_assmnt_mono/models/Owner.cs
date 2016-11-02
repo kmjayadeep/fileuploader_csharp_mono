@@ -29,7 +29,6 @@ namespace csharp_assmnt_mono.models
 			this.password = password;
 			this.level = 0;
 		}
-		/*
 		public Owner(DataRow row)
 		{
 			id = (int)row["id"];
@@ -37,8 +36,7 @@ namespace csharp_assmnt_mono.models
 			email = (string)row["email"];
 			password = (string)row["password"];
 			level = (int)row["level"];
-		}*/
-
+		}
 	}
 }
 

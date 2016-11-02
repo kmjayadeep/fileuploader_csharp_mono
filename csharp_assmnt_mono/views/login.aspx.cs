@@ -20,7 +20,7 @@ namespace csharp_assmnt_mono.views
 			Response.Redirect("register.aspx");
 		}
 		protected void btnSubmit_Click(object sender, EventArgs e)
-		{/*
+		{
 			Database d = Database.Instance;
 			Owner loggedInUser = d.login(txtEmail.Text, txtPWD.Text);
 			if (loggedInUser!=null)
@@ -32,7 +32,6 @@ namespace csharp_assmnt_mono.views
 			{
 				ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Email and Password')</script>");
 			}
-			*/
 		}
 
 

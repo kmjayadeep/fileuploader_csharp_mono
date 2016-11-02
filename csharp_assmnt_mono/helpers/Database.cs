@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using csharp_assmnt_mono.models;
+using Mono.Data.Sqlite;
 
 namespace csharp_assmnt_mono.helpers
 {
@@ -19,7 +20,7 @@ namespace csharp_assmnt_mono.helpers
 
 		private Database()
 		{
-			//con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+			con = new SqlConnection(GlobalVariables.connectionString);
 			con.Open();
 		}
 		public void denyUser(string email, string filename)
@@ -44,14 +45,14 @@ namespace csharp_assmnt_mono.helpers
 			cmd.Parameters.AddWithValue("@email", email);
 			cmd.Parameters.AddWithValue("@filename", filename);
 			cmd.ExecuteNonQuery();
-		}/*
+		}
 		public void insert(Perm perm)
 		{
 			SqlCommand cmd = new SqlCommand("insert into perm(fileid,ownerid) values(@fileid,@ownerid)", con);
 			cmd.Parameters.AddWithValue("@fileid", perm.fileid);
 			cmd.Parameters.AddWithValue("@ownerid", perm.ownerid);
 			cmd.ExecuteNonQuery();
-		}*/
+		}
 		public List<string> getDeniedUsers(string filename)
 		{
 			SqlCommand cmd = new SqlCommand("select email from owner where id not in (select owner.id from owner,files,perm where owner.id=perm.ownerid and files.id = perm.fileid and filename=@filename)", con);
@@ -100,7 +101,6 @@ namespace csharp_assmnt_mono.helpers
 			}
 			return ol;
 		}
-		/*
 		public void givePermission(File file, Owner owner)
 		{
 			SqlCommand cmd = new SqlCommand("insert into perm values(@fileid,@ownerid)", con);
@@ -148,7 +148,6 @@ namespace csharp_assmnt_mono.helpers
 
 			return lf;
 		}
-		*/
 		public bool register(Owner user)
 		{
 			SqlCommand cmd = new SqlCommand("insert into owner(name,email,password) output inserted.id values(@name,@email,@password)", con);
@@ -168,8 +167,7 @@ namespace csharp_assmnt_mono.helpers
 			da.Fill(dt);
 			if (dt.Rows.Count > 0)
 			{
-				//return new Owner(dt.Rows[0]);
-				return null;
+				return new Owner(dt.Rows[0]);
 			}
 			else
 			{

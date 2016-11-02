@@ -59,6 +59,9 @@
     </Compile>
     <Compile Include="models\Owner.cs" />
     <Compile Include="helpers\Database.cs" />
+    <Compile Include="models\File.cs" />
+    <Compile Include="models\Perm.cs" />
+    <Compile Include="helpers\GlobalVariables.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\" />
