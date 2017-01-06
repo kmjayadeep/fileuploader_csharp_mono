@@ -38,7 +38,7 @@ namespace csharp_assmnt_mono.helpers
 			                 "level int not null default 0);";
 			IDbCommand dbcmd = dbcon.CreateCommand();
 			dbcmd.CommandText = sqlUser;
-			dbcmd.ExecuteScalar ();
+			dbcmd.ExecuteNonQuery();
 			dbcmd.Dispose();
 		}
 	}

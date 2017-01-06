@@ -37,7 +37,7 @@
 			</tr>
 			<tr>
 			    <td>
-			    	<asp:Button ID="registerButton" runat="server" Text="Register" onclick="gotoRegister" />
+			    	<asp:HyperLink runat="server" Text="Register" NavigateUrl="register.aspx" />
 				</td>
 			</tr>
 		</table>

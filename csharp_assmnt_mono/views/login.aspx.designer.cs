@@ -24,7 +24,5 @@ namespace csharp_assmnt_mono.views {
 		protected System.Web.UI.WebControls.RequiredFieldValidator rfvPWD;
 		
 		protected System.Web.UI.WebControls.Button btnSubmit;
-		
-		protected System.Web.UI.WebControls.Button registerButton;
 	}
 }

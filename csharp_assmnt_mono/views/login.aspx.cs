@@ -15,10 +15,6 @@ namespace csharp_assmnt_mono.views
 	public partial class login : System.Web.UI.Page
 	{
 
-		protected void gotoRegister(object sender, EventArgs e)
-		{
-			Response.Redirect("register.aspx");
-		}
 		protected void btnSubmit_Click(object sender, EventArgs e)
 		{
 			Database d = Database.Instance;
