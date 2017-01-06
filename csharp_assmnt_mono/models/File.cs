@@ -14,12 +14,6 @@ namespace csharp_assmnt_mono.models
 			this.filename = filename;
 			this.ownerid = ownerid;
 		}
-		public File(DataRow row)
-		{
-			this.id = (int)row["id"];
-			this.filename = (string)row["filename"];
-			this.ownerid = (int)row["ownerid"];
-		}
 	}
 }
 

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="views\login.aspx" />
+    <Content Include="views\register.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -64,6 +65,12 @@
     <Compile Include="helpers\GlobalVariables.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="models\Model.cs" />
+    <Compile Include="views\register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\" />

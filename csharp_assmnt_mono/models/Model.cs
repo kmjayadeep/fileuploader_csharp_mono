@@ -19,6 +19,16 @@ namespace csharp_assmnt_mono.models
 			dbcmd.Dispose();
 			return reader;
 		}
+
+		public static int executeNonQuery(string sql){
+			Database db = Database.Instance;
+			IDbCommand dbcmd = db.getConnection().CreateCommand();
+			dbcmd.CommandText = sql;
+			int result = dbcmd.ExecuteNonQuery();
+			dbcmd.Dispose();
+			return result;
+		}
+
 	}
 }
 

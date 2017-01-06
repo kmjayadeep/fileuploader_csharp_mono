@@ -12,6 +12,10 @@ namespace csharp_assmnt_mono.models
 		public string name { get; set; }
 		public string email { get; set; }
 		public string password { get; set; }
+		enum levels{
+			NORMAL = 1,
+			ADMIN = 2
+		};
 		int level { get; set; }
 		public User(int id, string name, string email, string password, int level)
 		{
@@ -51,6 +55,12 @@ namespace csharp_assmnt_mono.models
 			}
 			reader.Dispose ();
 			return user;
+		}
+		public static bool register(string name,string email,string password){
+			string sql = "insert into user values(null,'" + name + "','" + email + "','" + password + "',"+(int)levels.NORMAL+")";
+			int res = executeNonQuery(sql);
+			Console.WriteLine (res);
+			return res == 1;
 		}
 	}
 }

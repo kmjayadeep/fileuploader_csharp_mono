@@ -31,7 +31,7 @@ namespace csharp_assmnt_mono.helpers
 
 		void executeMigration(){
 			string sqlUser = "create table if not exists user(" +
-			                 "id int primary key not null," +
+			                 "id integer primary key autoincrement not null," +
 			                 "name char(50)," +
 			                 "email char(50) unique," +
 			                 "password char(32)," +
