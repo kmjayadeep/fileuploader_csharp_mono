@@ -71,6 +71,7 @@
     <Compile Include="views\register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="helpers\Security.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\" />

@@ -34,7 +34,7 @@ namespace csharp_assmnt_mono.helpers
 			                 "id integer primary key autoincrement not null," +
 			                 "name char(50)," +
 			                 "email char(50) unique," +
-			                 "password char(32)," +
+			                 "password char(60)," +
 			                 "level int not null default 0);";
 			IDbCommand dbcmd = dbcon.CreateCommand();
 			dbcmd.CommandText = sqlUser;

@@ -42,6 +42,7 @@ namespace csharp_assmnt_mono.models
 			level = reader.GetInt32(4);
 		}
 		public static User login(string email,string password){
+			password = Security.hash(password);
 			string sql =
 				"SELECT * " +
 				"FROM user " +
@@ -57,9 +58,10 @@ namespace csharp_assmnt_mono.models
 			return user;
 		}
 		public static bool register(string name,string email,string password){
+			password = Security.hash(password);
 			string sql = "insert into user values(null,'" + name + "','" + email + "','" + password + "',"+(int)levels.NORMAL+")";
 			int res = executeNonQuery(sql);
-			Console.WriteLine (res);
+			Console.WriteLine (password);
 			return res == 1;
 		}
 	}
